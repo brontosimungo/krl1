@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Polyline, Tooltip } from 'react-leaflet';
 import L from 'leaflet';
-import schedule from '../public/jadwal_ka_1737.json';
 
 // Marker ikon kereta
 const trainIcon = new L.DivIcon({
@@ -11,13 +10,12 @@ const trainIcon = new L.DivIcon({
   iconAnchor: [10, 10],
 });
 
-// HH:MM:SS -> detik
+// HH:MM:SS → detik
 const timeToSeconds = (timeStr) => {
   const [h, m, s] = timeStr.split(':').map(Number);
   return h * 3600 + m * 60 + s;
 };
 
-// Waktu lokal WIB (Asia/Jakarta) -> detik
 const getNowInWIBSeconds = () => {
   const now = new Date();
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -34,7 +32,6 @@ const getNowInWIBSeconds = () => {
   return h * 3600 + m * 60 + s;
 };
 
-// Interpolasi posisi kereta
 const getTrainPosition = (schedule, nowSeconds) => {
   for (let i = 0; i < schedule.length - 1; i++) {
     const dep = schedule[i].departure;
@@ -54,9 +51,20 @@ const getTrainPosition = (schedule, nowSeconds) => {
 };
 
 export default function App() {
+  const [schedule, setSchedule] = useState([]);
   const [position, setPosition] = useState(null);
 
   useEffect(() => {
+    fetch('/jadwal_ka_1737.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setSchedule(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!schedule.length) return;
+
     const updatePosition = () => {
       const seconds = getNowInWIBSeconds();
       const pos = getTrainPosition(schedule, seconds);
@@ -66,7 +74,9 @@ export default function App() {
     updatePosition();
     const interval = setInterval(updatePosition, 10000);
     return () => clearInterval(interval);
-  }, []);
+  }, [schedule]);
+
+  if (!schedule.length) return <div>Loading jadwal...</div>;
 
   return (
     <MapContainer center={[-6.3, 106.6]} zoom={10} style={{ height: '100vh', width: '100%' }}>

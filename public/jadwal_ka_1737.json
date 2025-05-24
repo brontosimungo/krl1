@@ -1,0 +1,93 @@
+[
+  {
+    "station": "Rangkasbitung (RK)",
+    "lat": -6.364309,
+    "lng": 106.251239,
+    "arrival": null,
+    "departure": "14:10:00"
+  },
+  {
+    "station": "Citeras (CTR)",
+    "lat": -6.355482,
+    "lng": 106.293311,
+    "arrival": "14:21:00",
+    "departure": "14:22:00"
+  },
+  {
+    "station": "Maja (MJ)",
+    "lat": -6.347624,
+    "lng": 106.330826,
+    "arrival": "14:30:00",
+    "departure": "14:31:00"
+  },
+  {
+    "station": "Tigaraksa (TGS)",
+    "lat": -6.312012,
+    "lng": 106.473255,
+    "arrival": "14:37:00",
+    "departure": "14:38:00"
+  },
+  {
+    "station": "Daru (DAR)",
+    "lat": -6.310149,
+    "lng": 106.513899,
+    "arrival": "14:46:00",
+    "departure": "14:47:00"
+  },
+  {
+    "station": "Parungpanjang (PRP)",
+    "lat": -6.306933,
+    "lng": 106.554928,
+    "arrival": "14:58:00",
+    "departure": "14:59:00"
+  },
+  {
+    "station": "Cisauk (CSK)",
+    "lat": -6.305071,
+    "lng": 106.652049,
+    "arrival": "15:08:00",
+    "departure": "15:09:00"
+  },
+  {
+    "station": "Serpong (SRP)",
+    "lat": -6.295678,
+    "lng": 106.664375,
+    "arrival": "15:12:00",
+    "departure": "15:13:00"
+  },
+  {
+    "station": "Sudimara (SDM)",
+    "lat": -6.281818,
+    "lng": 106.69642,
+    "arrival": "15:21:00",
+    "departure": "15:22:00"
+  },
+  {
+    "station": "Pondokranji (PDJ)",
+    "lat": -6.239722,
+    "lng": 106.737838,
+    "arrival": "15:27:00",
+    "departure": "15:28:00"
+  },
+  {
+    "station": "Kebayoran (KBY)",
+    "lat": -6.231354,
+    "lng": 106.790473,
+    "arrival": "15:35:00",
+    "departure": "15:36:00"
+  },
+  {
+    "station": "Palmerah (PLM)",
+    "lat": -6.206158,
+    "lng": 106.7979,
+    "arrival": "15:41:00",
+    "departure": "15:42:00"
+  },
+  {
+    "station": "Tanahabang (THB)",
+    "lat": -6.186486,
+    "lng": 106.811921,
+    "arrival": "15:47:00",
+    "departure": null
+  }
+]
